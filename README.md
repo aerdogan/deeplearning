@@ -1,0 +1,2 @@
+# JavaScript
+some example scripts
