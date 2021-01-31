@@ -3,8 +3,10 @@ import Navi from './Navi';
 import CategoryList from './CategoryList';
 import ProductList from './ProductList';
 import { Col, Container, Row } from 'reactstrap';
+import alertify from "alertifyjs"
 
-export default class App extends Component { state = { currentCategory:"", products:[] }
+export default class App extends Component {
+  state = { currentCategory: "", products: [] }
 
   componentDidMount() {
     this.getProducts();
@@ -13,6 +15,7 @@ export default class App extends Component { state = { currentCategory:"", produ
   changeCategory = category => {
     this.setState({ currentCategory: category.name })
     this.getProducts(category.id);
+    alertify.success(category.name, 2);
   }
 
   getProducts = categoryId => {
@@ -31,20 +34,18 @@ export default class App extends Component { state = { currentCategory:"", produ
     return (
       <div>
         <Container>
-          <Row>
-            <Navi />
-          </Row>
+          <Navi />
           <Row>
             <Col xs="3">
               <CategoryList currentCategory={this.state.currentCategory} changeCategory={this.changeCategory} info={categoryInfo} />
             </Col>
             <Col xs="9">
-              <ProductList products={this.state.products} currentCategory={this.state.currentCategory} info={productInfo}/>
+              <ProductList products={this.state.products} currentCategory={this.state.currentCategory} info={productInfo} />
             </Col>
           </Row>
         </Container>
       </div>
     );
   }
- 
+
 }

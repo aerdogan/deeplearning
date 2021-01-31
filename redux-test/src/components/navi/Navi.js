@@ -7,13 +7,10 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   NavbarText
 } from 'reactstrap';
-
+import CartSummary from '../cart/CartSummary';
+import {Link} from "react-router-dom"
 
 const Navi = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,13 +20,16 @@ const Navi = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">my react app</NavbarBrand>
+        <NavbarBrand><Link to="/">React App</Link></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            
+            <NavItem>
+              <NavLink><Link to="/saveproduct">Ürün Ekle</Link></NavLink>
+            </NavItem>
+            <CartSummary />
           </Nav>
-          <NavbarText>json api test</NavbarText>
+          <NavbarText>Yan Menu</NavbarText>
         </Collapse>
       </Navbar>
     </div>
