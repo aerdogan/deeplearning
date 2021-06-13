@@ -1,0 +1,28 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "categoryId": 2,
+        "name": "Product 1",
+        "desc": "Product 1 Description",
+        "price": "24"
+      },
+      {
+        "id": 2,
+        "categoryId": 1,
+        "name": "Product 2",
+        "desc": "Product 2 Description",
+        "price": "21"
+      }
+    ],
+    "categories": [
+      {
+        "id": 1,
+        "name": "Category 1"
+      },
+      {
+        "id": 2,
+        "name": "Category 2"
+      }
+    ]
+  }
