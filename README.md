@@ -13,7 +13,7 @@ Fake json server yüklemek için
 json server çalıştırmak için
 
 ### `json-server --watch db.json`
-
+Not: db.json dosyası proje klasöründedir. json-server'e watch parametresi ile bu dosya gösterilmelidir...
 ![resim](https://user-images.githubusercontent.com/193318/121803601-1dd45400-cc4b-11eb-943d-e687d1706102.png)
 
 
